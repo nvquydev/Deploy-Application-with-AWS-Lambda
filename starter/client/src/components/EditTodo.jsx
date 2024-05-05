@@ -10,6 +10,8 @@ const UploadState = {
   UploadingFile: 'UploadingFile'
 }
 
+const oauthDomain = process.env.REACT_APP_AUTH0_DOMAIN
+
 export function EditTodo() {
   function renderButton() {
     return (
@@ -43,7 +45,7 @@ export function EditTodo() {
 
       setUploadState(UploadState.FetchingPresignedUrl)
       const accessToken = await getAccessTokenSilently({
-        audience: `https://dev-873xn8a2ahqhk83x.us.auth0.com/api/v2/`,
+        audience: `https://${oauthDomain}/api/v2/`,
         scope: 'write:todos'
       })
       const uploadUrl = await getUploadUrl(accessToken, todoId)

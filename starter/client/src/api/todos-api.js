@@ -63,7 +63,7 @@ export async function getUploadUrl(idToken, todoId) {
       }
     }
   )
-  return response.data.uploadUrl
+  return response.data.upload
 }
 
 export async function uploadFile(uploadUrl, file) {
