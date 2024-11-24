@@ -1,4 +1,4 @@
-org: udakhoi
+org: quyngo102
 app: serverless-todo-app
 service: serverless-todo-app
 
@@ -6,7 +6,6 @@ plugins:
   - serverless-iam-roles-per-function
   - serverless-reqvalidator-plugin
 
-frameworkVersion: '3'
 
 provider:
   name: aws
@@ -22,7 +21,7 @@ provider:
     TODOS_TABLE: serverless-todo-app-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
     SIGNED_URL_EXPIRATION: 3000
-    IMAGES_S3_BUCKET: khoinm-udacity-serverless-todo-images-stored-${self:provider.stage}
+    IMAGES_S3_BUCKET: quyngo102-udacity-serverless-todo-images-stored-${self:provider.stage}
   logs: 
     # Enable API Gateway logs
     restApi: true
